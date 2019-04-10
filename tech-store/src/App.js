@@ -4,6 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUsb } from "react-icons/fa";
 import styled from "styled-components";
 
+import AboutPage from "./pages/AboutPage";
+import cartPage from "./pages/CartPage";
+import ContactPage from "./pages/ContactPage";
+import Default from "./pages/Default";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
+import SingleProductPage from "./pages/SingleProductPage";
+
 class App extends Component {
   render() {
     return (
