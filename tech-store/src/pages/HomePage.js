@@ -3,8 +3,8 @@ import { ProductConsumer } from "../context/Context";
 
 export default function HomePage() {
   return (
-    <ProductConsumer>
-      {value => <h1>{value}</h1>}
-    </ProductConsumer>
+    <React.Fragment>
+      <h1>Hi</h1>
+    </React.Fragment>
   )
 }
