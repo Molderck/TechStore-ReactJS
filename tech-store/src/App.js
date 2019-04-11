@@ -14,29 +14,31 @@ import SingleProductPage from "./pages/SingleProductPage";
 
 import { Route, Switch } from "react-router-dom";
 
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Sidecart from "./components/Sidecart";
+
 class App extends Component {
   render() {
     return (
-      <h1>Tech-Store <FaUsb/>
-      <Button>Styled Component</Button>
-      <Switch>
-        <Route path="/" exact component={HomePage}></Route>
-        <Route path="/about" component={AboutPage}></Route>
-        <Route path="/contact" component={ContactPage}></Route>
-        <Route path="/products" component={ProductsPage}></Route>
-        <Route path="/product/:id" exact component={SingleProductPage}></Route>
-        <Route path="/cart" component={CartPage}></Route>
-        <Route component={Default}></Route>
-      </Switch>
-      </h1>
+      <React.Fragment>
+        <Navbar />
+        <Sidebar />
+        <Sidecart />
+        <Switch>
+          <Route path="/" exact component={HomePage}></Route>
+          <Route path="/about" component={AboutPage}></Route>
+          <Route path="/contact" component={ContactPage}></Route>
+          <Route path="/products" component={ProductsPage}></Route>
+          <Route path="/product/:id" exact component={SingleProductPage}></Route>
+          <Route path="/cart" component={CartPage}></Route>
+          <Route component={Default}></Route>
+        </Switch>
+        <Footer />
+      </React.Fragment>
     );
   }
 }
-
-const color = "#f15025";
-const Button = styled.button`
-  color: white;
-  background: ${color};
-` 
 
 export default App;
