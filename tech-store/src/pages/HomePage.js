@@ -1,10 +1,11 @@
 import React from 'react';
-import { ProductConsumer } from "../context/Context";
+import Hero from "../components/Hero";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
-    <React.Fragment>
-      <h1>Hi</h1>
-    </React.Fragment>
+    <Hero title="Awesome Gadgets">
+      <Link to="/products">Our Products</Link>
+    </Hero>
   )
 }
