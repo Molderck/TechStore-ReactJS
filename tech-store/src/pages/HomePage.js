@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <Hero title="Awesome Gadgets" max={true} >
-      <Link to="/products">Our Products</Link>
+      <Link to="/products" className="main-link" style={{ margin: "2rem"}}>Our Products</Link>
     </Hero>
   )
 }
