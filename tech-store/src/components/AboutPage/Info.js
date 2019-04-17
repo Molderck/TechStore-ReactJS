@@ -11,6 +11,14 @@ export default function Info() {
                         <img src={aboutBcg} className="img-fluid img-thumbnail" alt="About" style={{ background: "var(--darkGrey)" }}></img>
                     </div>
                     <div className="col-10 mx-auto col-md-6 my-3">
+                        <Title title="About Us" />
+                        <p className="text-lead text-muted my-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <p className="text-lead text-muted my-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <button className="main-link" type="button" style={{ marginTop: "2rem" }}>More Info</button>
                     </div>
                 </div>
             </div>
