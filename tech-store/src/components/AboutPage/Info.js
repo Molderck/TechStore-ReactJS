@@ -22,7 +22,6 @@ export default function Info() {
                     </div>
                 </div>
             </div>
-            <Title title="About Us" />
         </section>
     )
 }
