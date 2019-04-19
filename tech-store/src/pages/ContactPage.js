@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../components/Hero';
+import contactBcg from '../images/contactBcg.jpeg';
+import Contact from '../components/ContactPage/Contact';
 
 export default function ContactPage() {
   return (
-    <React.Fragment>
-        <h1>ContactPage</h1>
-    </React.Fragment>
+    <>
+      <Hero img={contactBcg} />
+      <Contact />
+    </>
   )
 }
