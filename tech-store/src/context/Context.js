@@ -20,7 +20,19 @@ class ProductProvider extends Component {
         filteredProduct: [],
         featuredProducts: [],
         singleProduct: {},
-        loading: true
+        loading: false
+    }
+
+    componentDidMount() {
+        this.setProducts(items);
+    }
+
+    setProducts = (products) => {
+        let storeProducts = products.map(item => {
+            const { id } = item.sys;
+            const product = { id, ...item.fields };
+            return product;
+        });
     }
 
     handleSidebar = () => {
