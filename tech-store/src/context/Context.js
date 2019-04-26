@@ -53,6 +53,20 @@ class ProductProvider extends Component {
         return [];
     }
 
+    getTotals = () => { };
+
+    addTotals = () => { };
+
+    syncStorage = () => { };
+
+    addToCart = (id) => {
+        console.log(`Add to cart ${id}`);
+    };
+
+    setSingleProduct = (id) => {
+        console.log(`Set single product ${id}`);
+    };
+
     handleSidebar = () => {
         this.setState({ sidebarOpen: !this.state.sidebarOpen })
     }
