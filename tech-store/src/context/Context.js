@@ -33,6 +33,24 @@ class ProductProvider extends Component {
             const product = { id, ...item.fields };
             return product;
         });
+
+        let featuredProducts = storeProducts.filter(item => item.featured === true);
+        this.setState({
+            storeProducts,
+            filteredProduct: storeProducts,
+            featuredProducts,
+            cart: this.getStorageCart(),
+            singleProduct: this.getStorageProduct(),
+            loading: false
+        })
+    }
+
+    getStorageCart = () => {
+        return [];
+    }
+
+    getStorageProduct = () => {
+        return [];
     }
 
     handleSidebar = () => {
