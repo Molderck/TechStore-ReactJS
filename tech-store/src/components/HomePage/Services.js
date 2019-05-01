@@ -19,7 +19,7 @@ export default class Services extends Component {
                 text: '30 Days'
             },
             {
-                id: 1,
+                id: 3,
                 icon: <FaDollarSign />,
                 title: 'Secured Payment',
                 text: 'Secured'
