@@ -54,7 +54,27 @@ class ProductProvider extends Component {
     return [];
   };
 
-  getTotals = () => {};
+  getTotals = () => {
+    let subTotal = 0;
+    let cartItems = 0;
+    this.state.cart.forEach(item => {
+      subTotal += item.total;
+      cartItems += item.count;
+    });
+
+    subTotal = parseFloat(subTotal.toFixed(2));
+    let tax = subTotal * 0.1;
+    tax = parseFloat(tax.toFixed(2));
+    let total = subTotal + tax;
+    total = parseFloat(total.toFixed(2));
+
+    return {
+      cartItems,
+      subTotal,
+      tax,
+      total
+    };
+  };
 
   addTotals = () => {};
 
