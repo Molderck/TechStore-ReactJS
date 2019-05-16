@@ -76,7 +76,15 @@ class ProductProvider extends Component {
     };
   };
 
-  addTotals = () => {};
+  addTotals = () => {
+    const totals = this.getTotals();
+    this.setState({
+      cartItems: totals.cartItems,
+      cartSubTotal: totals.subTotal,
+      cartTax: totals.tax,
+      cartTotal: totals.total
+    });
+  };
 
   syncStorage = () => {};
 
