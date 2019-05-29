@@ -91,7 +91,9 @@ class ProductProvider extends Component {
     });
   };
 
-  syncStorage = () => {};
+  syncStorage = () => {
+    localStorage.setItem('cart', JSON.stringify(this.state.cart))
+  };
 
   addToCart = id => {
     let tempCart = [...this.state.cart];
