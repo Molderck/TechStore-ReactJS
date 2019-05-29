@@ -62,7 +62,9 @@ class ProductProvider extends Component {
   };
 
   getStorageProduct = () => {
-    return [];
+    return localStorage.getItem("singleProduct")
+      ? JSON.parse(localStorage.getItem("singleProduct"))
+      : {};
   };
 
   getTotals = () => {
