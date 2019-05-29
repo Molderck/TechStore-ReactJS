@@ -20,7 +20,7 @@ class ProductProvider extends Component {
     filteredProduct: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: false
+    loading: true
   };
 
   componentDidMount() {
@@ -128,7 +128,12 @@ class ProductProvider extends Component {
   };
 
   setSingleProduct = id => {
-    console.log(`Set single product ${id}`);
+    let product = this.state.storeProducts.find(item => item.id === id);
+    localStorage.setItem("singleProduct", JSON.stringify(product));
+    this.setState({
+      singleProduct: { ...product },
+      loading: false
+    });
   };
 
   handleSidebar = () => {
