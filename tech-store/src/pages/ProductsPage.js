@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Products from "../components/ProductsPage/Products";
+import Hero from "../components/Hero";
+import productBcg from "../images/productsBcg.jpeg";
 
 export default function ProductsPage() {
   return (
-    <React.Fragment>
-        <h1>ProductsPage</h1>
-    </React.Fragment>
-  )
+    <>
+      <Hero img={productBcg} />
+      <Products />
+    </>
+  );
 }
