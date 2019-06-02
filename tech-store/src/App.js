@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUsb } from "react-icons/fa";
@@ -27,13 +27,13 @@ class App extends Component {
         <Sidebar />
         <Sidecart />
         <Switch>
-          <Route path="/" exact component={HomePage}></Route>
-          <Route path="/about" component={AboutPage}></Route>
-          <Route path="/contact" component={ContactPage}></Route>
-          <Route path="/products" component={ProductsPage}></Route>
-          <Route path="/product/:id" exact component={SingleProductPage}></Route>
-          <Route path="/cart" component={CartPage}></Route>
-          <Route component={Default}></Route>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/products" exact component={ProductsPage} />
+          <Route path="/products/:id" component={SingleProductPage} />
+          <Route path="/cart" component={CartPage} />
+          <Route component={Default} />
         </Switch>
         <Footer />
       </React.Fragment>
