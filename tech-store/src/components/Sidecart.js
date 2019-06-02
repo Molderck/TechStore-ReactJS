@@ -1,20 +1,43 @@
-import React from 'react';
+import React from "react";
 import { ProductConsumer } from "../context/Context";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Sidecart() {
   return (
     <ProductConsumer>
       {value => {
-        const { cartOpen, closeCart } = value;
+        const { cartOpen, closeCart, cart, cartTotal } = value;
         return (
           <CartWrapper show={cartOpen} onClick={closeCart}>
-            <p>Cart Items</p>
+            <ul>
+              {cart.map(item => {
+                return (
+                  <li key={item.key} className="cart-item mb-4">
+                    <img width="35" src={item.image} alt="Cart Product" />
+                    <div className="mt-3">
+                      <h6 className="text-uppercase">{item.title}</h6>
+                      <h6 className="text-title text-capitalize">
+                        Amount: {item.count}
+                      </h6>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <h4 className="text-capitalize text-main">
+              Cart Total: ${cartTotal}
+            </h4>
+            <div className="text-center my-5">
+              <Link to="/cart" className="main-link">
+                Cart Page
+              </Link>
+            </div>
           </CartWrapper>
-        )
+        );
       }}
     </ProductConsumer>
-  )
+  );
 }
 
 const CartWrapper = styled.div`
@@ -28,7 +51,7 @@ const CartWrapper = styled.div`
   transform: ${props => (props.show ? "translateX(0)" : "translateX(100%)")};
   border-left: 4px solid var(--primaryColor);
   transition: var(--mainTransition);
-  @media (min-width: 576px){
+  @media (min-width: 576px) {
     width: 20rem;
   }
 `;
