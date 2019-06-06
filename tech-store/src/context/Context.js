@@ -173,7 +173,19 @@ class ProductProvider extends Component {
     );
   };
   decrement = id => {};
-  removeItem = id => {};
+  removeItem = id => {
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter(item => item.id !== id);
+    this.setState(
+      {
+        cart: [...tempCart]
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
+  };
   clearCart = () => {};
 
   render() {
