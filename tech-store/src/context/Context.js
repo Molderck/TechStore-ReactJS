@@ -154,7 +154,24 @@ class ProductProvider extends Component {
     this.setState({ cartOpen: true });
   };
 
-  increment = id => {};
+  increment = id => {
+    let tempCart = [...this.state.cart];
+    const cartItem = tempCart.find(item => item.id === id);
+    cartItem.count++;
+    cartItem.total = cartItem.count * cartItem.price;
+    cartItem.total = parseFloat(cartItem.total.toFixed(2));
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart]
+        };
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
+  };
   decrement = id => {};
   removeItem = id => {};
   clearCart = () => {};
