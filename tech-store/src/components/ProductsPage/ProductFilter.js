@@ -16,7 +16,13 @@ export default function FilterProducts() {
           handleChange,
           storeProducts
         } = value;
+        let companies = new Set();
+        companies.add("all");
+        for (let product in storeProducts) {
+          companies.add(storeProducts[product]["company"]);
+        }
 
+        companies = [...companies];
         return (
           <div className="row my-5">
             <div className="col-10 mx auto">
@@ -41,7 +47,13 @@ export default function FilterProducts() {
                     onChange={handleChange}
                     value={company}
                   >
-                    <option value="all">All</option>
+                    {companies.map((company, index) => {
+                      return (
+                        <option key={index} value={company}>
+                          {company}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
                 <div>
@@ -70,7 +82,7 @@ export default function FilterProducts() {
                     name="shipping"
                     id="shipping"
                     onChange={handleChange}
-                    value={shipping && true}
+                    checked={shipping && true}
                   />
                 </div>
               </FilterWrapper>
