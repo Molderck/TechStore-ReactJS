@@ -82,4 +82,21 @@ export default function FilterProducts() {
   );
 }
 
-const FilterWrapper = styled.div``;
+const FilterWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  label {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .filter-item,
+  .filter-price {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border-radius: 0.5rem;
+    border: 2px solid var(--darkGrey);
+  }
+`;
