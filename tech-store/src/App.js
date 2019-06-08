@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaUsb } from "react-icons/fa";
-import styled from "styled-components";
-
 import AboutPage from "./pages/AboutPage";
 import CartPage from "./pages/CartPage";
 import ContactPage from "./pages/ContactPage";

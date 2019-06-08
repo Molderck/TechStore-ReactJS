@@ -257,6 +257,7 @@ class ProductProvider extends Component {
     }
 
     if (search.length > 0) {
+      // eslint-disable-next-line
       tempProducts = tempProducts.filter(item => {
         let tempSearch = search.toLowerCase();
         let tempTitle = item.title.toLowerCase().slice(0, search.length);
